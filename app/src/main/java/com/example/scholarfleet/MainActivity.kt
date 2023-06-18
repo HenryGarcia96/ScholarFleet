@@ -18,7 +18,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             ScholarFleetTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+                Surface( color = MaterialTheme.colorScheme.background) {
                     Greeting("Android")
                 }
             }
@@ -30,7 +30,7 @@ class MainActivity : ComponentActivity() {
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
             text = "Hello $name!",
-            modifier = modifier
+            modifier = modifier.fillMaxSize()
     )
 }
 
