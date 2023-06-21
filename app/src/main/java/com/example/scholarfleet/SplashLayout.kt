@@ -13,7 +13,7 @@ class SplashLayout : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_layout)
 
-        Toast.makeText(this, "Inicializando aplicación", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "Esto es un milagro, ya le entendi", Toast.LENGTH_LONG).show()
 
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,

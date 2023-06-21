@@ -1,31 +1,57 @@
 package com.example.scholarfleet
 
-import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
 import android.os.Bundle
-import android.widget.Toast
-import com.example.scholarfleet.Database.Database
+import android.view.Menu
+import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.navigation.NavigationView
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.appcompat.app.AppCompatActivity
 import com.example.scholarfleet.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
+
+    private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var binding: ActivityHomeBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
 
-        val binding: ActivityHomeBinding = DataBindingUtil.setContentView(this, R.layout.activity_home)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        //Creación de la bd
-        val admin = Database(this, "agenda", null, 1)
-        //puntero
-        val db = admin.writableDatabase
+        setSupportActionBar(binding.appBarHome.toolbar)
 
-        //Evento click sobre el btn
-        binding.textChange.setOnClickListener {
-            //cambio de texto al textview
-            binding.textHello.text = "Spiderman beyond the spiderverse"
-            //Toast de notificación
-            Toast.makeText(this, "Hola compañero este es un toast de notificación", Toast.LENGTH_SHORT).show()
-
+        binding.appBarHome.fab.setOnClickListener { view ->
+            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()
         }
+        val drawerLayout: DrawerLayout = binding.drawerLayout
+        val navView: NavigationView = binding.navView
+        val navController = findNavController(R.id.nav_host_fragment_content_home)
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+        appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.nav_home, R.id.profesorFragment
+            ), drawerLayout
+        )
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        navView.setupWithNavController(navController)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.home, menu)
+        return true
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment_content_home)
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }
