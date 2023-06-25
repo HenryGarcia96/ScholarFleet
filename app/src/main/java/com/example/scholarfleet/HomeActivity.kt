@@ -12,6 +12,7 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.scholarfleet.databinding.ActivityHomeBinding
+import com.example.scholarfleet.database.Database
 
 class HomeActivity : AppCompatActivity() {
 
@@ -42,6 +43,11 @@ class HomeActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        //Creación de la bd
+        val admin = Database(this, "agenda", null, 1)
+        //puntero
+        val db = admin.writableDatabase
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

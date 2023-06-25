@@ -10,21 +10,21 @@
 
     <string name="menu_home">Inicio</string>
 
-    <string name="menu_profesor">Profesor</string>
-
 
     <string name="splash_screen">Aplicacion Inicial</string>
     <string name="title_activity_maestros">Maestros</string>
     <!-- Strings used for fragments for navigation -->
+    <string name="agenda_label">Agenda</string>
+    <string name="profesor_label">Profesor</string>
+
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
+
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="lorem_ipsum">Hola mundo cruel
-    </string>
-    <string name="Tprofesores">PROFESORES
-    </string>
+    <string name="lorem_ipsum">Hola mundo cruel</string>
+    <string name="Tprofesores">PROFESORES</string>
     <string name="title_activity_home">HomeActivity</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

@@ -12,8 +12,14 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
+        android:id="@+id/agendaFragment"
+        android:name="com.example.scholarfleet.ui.agenda.AgendaFragment"
+        android:label="@string/agenda_label"
+        tools:layout="@layout/fragment_agenda_layout" />
+
+    <fragment
         android:id="@+id/profesorFragment"
         android:name="com.example.scholarfleet.ProfesorFragment"
-        android:label="@string/menu_profesor"
+        android:label="Profesores"
         tools:layout="@layout/fragment_profesor" />
 </navigation>
