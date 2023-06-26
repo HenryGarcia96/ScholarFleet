@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp">
+
+        <TextView
+            android:id="@+id/btnCreateEventResource"
+            android:layout_width="768dp"
+            android:layout_height="25dp"
+            android:layout_margin="2dp"
+            android:text="Crear evento"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"></TextView>
+        <TextView
+            android:id="@+id/btnAddProfesorResource"
+            android:layout_width="768dp"
+            android:layout_height="25dp"
+            android:layout_margin="2dp"
+            android:text="Añadir profesor"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_below="@id/btnCreateEventResource"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/btnAddMateriaResource"
+            android:layout_width="768dp"
+            android:layout_height="25dp"
+            android:layout_margin="2dp"
+            android:text="Añadir materia"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_below="@id/btnAddProfesorResource"
+            >
+        </TextView>
+
+
+        <!--text view for displaying course name-->
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

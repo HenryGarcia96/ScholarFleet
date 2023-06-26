@@ -2,6 +2,7 @@ package com.example.scholarfleet
 
 import android.os.Bundle
 import android.view.Menu
+import android.widget.Button
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -13,6 +14,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.scholarfleet.databinding.ActivityHomeBinding
 import com.example.scholarfleet.database.Database
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class HomeActivity : AppCompatActivity() {
 
@@ -28,9 +30,10 @@ class HomeActivity : AppCompatActivity() {
         setSupportActionBar(binding.appBarHome.toolbar)
 
         binding.appBarHome.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+            val bottomSheetDialogFragment = BottomSheetDialogFragmentExample()
+            bottomSheetDialogFragment.show(supportFragmentManager, bottomSheetDialogFragment.tag)
         }
+
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_home)
@@ -38,7 +41,7 @@ class HomeActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.profesorFragment
+                R.id.nav_home,R.id.agendaFragment, R.id.profesorFragment
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
